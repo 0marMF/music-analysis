@@ -11,12 +11,12 @@
 
 | Fase | Componente | Estado |
 |---|---|---|
-| 0 | Setup del entorno | ⬜ Pendiente |
-| 1 | EDA — Qué hace popular a una canción | ⬜ Pendiente |
-| 2 | Análisis por género | ⬜ Pendiente |
-| 3 | Clustering — Agrupación de canciones | ⬜ Pendiente |
-| 4 | (Opcional) Predicción de popularidad | ⬜ Pendiente |
-| 5 | Cierre de portfolio | ⬜ Pendiente |
+| 0 | Setup del entorno | ✅ Completado |
+| 1 | EDA — Qué hace popular a una canción | ✅ Completado |
+| 2 | Análisis por género | ✅ Completado |
+| 3 | Clustering — Agrupación de canciones | ✅ Completado |
+| 4 | (Opcional) Predicción de popularidad | ⏭️ Descartada — el EDA demuestra que el audio no predice popularidad |
+| 5 | Cierre de portfolio | ✅ Completado |
 
 Leyenda: ⬜ Pendiente · 🔄 En progreso · ✅ Completado
 

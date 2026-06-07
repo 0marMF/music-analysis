@@ -20,6 +20,27 @@
 
 Leyenda: ⬜ Pendiente · 🔄 En progreso · ✅ Completado
 
+> **v1.0.0 completo.** Ver abajo **Mejoras planificadas (v1.1)** — el clustering quedó pobre
+> (K=2) y faltó *demostrar* el hallazgo de popularidad; ambos son focos declarados del proyecto.
+
+---
+
+## 🔄 Mejoras planificadas (v1.1) — auditoría 2026-06-06
+
+### 🔴 P1 — Clustering interpretable (no solo el K óptimo por silhouette)
+El silhouette favorece **K=2** ("enérgicas vs acústicas"), pero el objetivo eran clusters ricos
+e interpretables ("melancólicas acústicas", "instrumentales tranquilas"…).
+- [ ] Presentar también **K=4–5 con nombres descriptivos**, además del K=2
+- [ ] Documentar el trade-off **silhouette ↔ interpretabilidad** (la métrica no es el objetivo)
+- [ ] Visualización **t-SNE/UMAP** para separar mejor las "vibes" → `reports/`
+
+### 🟠 P2 — Fase 4: *demostrar* (no solo citar) que el audio no predice popularidad
+- [ ] Modelo de regresión/clasificación de `popularity` con features de audio
+- [ ] Reportar el **R²/AUC bajo** como evidencia empírica del hallazgo estrella
+
+**Por qué:** el proyecto promete "agrupar por vibes" y "qué hace popular"; K=2 y citar correlaciones
+se quedan cortos frente a clusters nombrados y una prueba empírica del resultado negativo.
+
 ---
 
 ## 🔄 Backlog de mejoras — v1.1.0 *(planificado, aún sin implementar)*

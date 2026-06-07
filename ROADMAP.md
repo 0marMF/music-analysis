@@ -241,6 +241,36 @@ se quedan cortos frente a clusters nombrados y una prueba empírica del resultad
 
 ---
 
+## 🚀 De análisis a proyecto de Ciencia de Datos (Track DS — planificado)
+
+Este proyecto no tiene un "modelo" central, pero sí puede convertirse en un mini-producto: un
+recomendador por similitud de audio. Eso es lo que lo lleva de "EDA bonito" a proyecto de DS.
+
+**Código modular → `src/`**
+- [ ] `src/data.py` (carga + dedup por `track_id`), `src/features.py` (escalado + PCA),
+      `src/cluster.py` (entrenar KMeans, nombrar clusters). Los notebooks orquestan.
+- [ ] `config.yaml` (features de audio, K, semilla) + `python -m src.pipeline`.
+
+**Tests con pytest**
+- [ ] Validación de datos: columnas de audio presentes, rangos 0-1 donde toca, dedup correcto.
+- [ ] Test de que el clustering es reproducible con la semilla fija.
+
+**Mini-producto: recomendador de "canciones similares"**
+- [ ] Función/CLI `similar(track_id, n=10)` que devuelve canciones del mismo cluster o las más
+      cercanas por embedding (vecinos más próximos).
+- [ ] (Opcional) API pequeña con FastAPI envolviendo esa función.
+
+**Reproducibilidad y CI**
+- [ ] Persistir el modelo de clustering + scaler + PCA (`src/*.pkl`) para no recalcular.
+- [ ] GitHub Actions que corre `pytest` en cada push.
+- [ ] Model/Data card: qué representa cada cluster, límites (el audio no explica popularidad),
+      y que faltan metadatos (año, reproducciones).
+
+> **Estilo:** comentarios y docs con voz de persona. Nombrar clusters como los nombraría un
+> humano ("acústicas tristes", no "Cluster 1"), y explicar el *porqué* de cada decisión.
+
+---
+
 ## Orden de desarrollo
 
 ```

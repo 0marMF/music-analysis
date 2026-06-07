@@ -22,6 +22,16 @@ Leyenda: ⬜ Pendiente · 🔄 En progreso · ✅ Completado
 
 ---
 
+## 🔄 Backlog de mejoras — v1.1.0 *(planificado, aún sin implementar)*
+
+> Derivado de la revisión de calidad (2026-06-06). El clustering quedó por debajo del foco del proyecto.
+
+- [ ] **Clustering interpretable (K=4–5)** además del K=2 óptimo por silhouette — el objetivo eran "vibes" ricas y nombradas ("melancólicas acústicas", "instrumentales tranquilas"…). Documentar el trade-off **silhouette ↔ interpretabilidad** (el K óptimo por métrica no es siempre el más útil).
+- [ ] **Reactivar la Fase 4 (predicción de popularidad)** — entrenar un modelo simple para *demostrar empíricamente* el R² bajo (hoy solo se cita la correlación; demostrarlo es más riguroso).
+- [ ] **Visualización t-SNE/UMAP** para una separación visual más fina de los clusters.
+
+---
+
 ## Fase 0 — Setup del entorno
 
 - [ ] Descargar dataset de Kaggle y colocar en `data/`

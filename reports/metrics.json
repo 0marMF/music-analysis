@@ -1,17 +1,27 @@
 {
-  "k": 2,
-  "silhouette": 0.2611,
+  "k": 4,
+  "silhouette": 0.171,
   "n_songs": 89740,
   "clusters": [
     {
       "id": 0,
-      "name": "Altas en enérgicas, bajas en acústicas",
-      "size": 67438
+      "name": "Altas en acústicas, bajas en enérgicas",
+      "size": 18648
     },
     {
       "id": 1,
-      "name": "Altas en acústicas, bajas en enérgicas",
-      "size": 22302
+      "name": "Altas en en vivo, bajas en instrumentales",
+      "size": 7001
+    },
+    {
+      "id": 2,
+      "name": "Altas en alegres, bajas en instrumentales",
+      "size": 36646
+    },
+    {
+      "id": 3,
+      "name": "Altas en enérgicas, bajas en acústicas",
+      "size": 27445
     }
   ]
 }

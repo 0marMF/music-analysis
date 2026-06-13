@@ -43,13 +43,13 @@ se quedan cortos frente a clusters nombrados y una prueba empírica del resultad
 
 ---
 
-## Backlog de mejoras — v1.1.0 *(planificado, aún sin implementar)*
+## Backlog de mejoras — v1.1.0 *(en progreso: CP1-CP2 hechos)*
 
 > Derivado de la revisión de calidad (2026-06-06). El clustering quedó por debajo del foco del proyecto.
 
-- [ ] **Clustering interpretable (K=4–5)** además del K=2 óptimo por silhouette — el objetivo eran "vibes" ricas y nombradas ("melancólicas acústicas", "instrumentales tranquilas"…). Documentar el trade-off **silhouette ↔ interpretabilidad** (el K óptimo por métrica no es siempre el más útil).
-- [ ] **Reactivar la Fase 4 (predicción de popularidad)** — entrenar un modelo simple para *demostrar empíricamente* el R² bajo (hoy solo se cita la correlación; demostrarlo es más riguroso).
-- [ ] **Visualización t-SNE/UMAP** para una separación visual más fina de los clusters.
+- [x] **Clustering interpretable (K=4)** además del K=2 óptimo por silhouette — 4 "vibes" nombradas (acústicas/tranquilas, en vivo, alegres, enérgicas); silhouette 0.17 vs 0.26, trade-off documentado.
+- [ ] **Reactivar la Fase 4 (predicción de popularidad)** — entrenar un modelo simple para *demostrar empíricamente* el R² bajo (CP4).
+- [x] **Visualización UMAP** para una separación visual más fina de los clusters (`reports/09_clusters_pca.png`).
 
 ---
 

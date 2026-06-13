@@ -6,3 +6,4 @@ seaborn==0.13.2
 plotly==5.22.0
 ipykernel==6.29.4
 jupyter==1.0.0
+umap-learn==0.5.12

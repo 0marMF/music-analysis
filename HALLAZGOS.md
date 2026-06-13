@@ -39,10 +39,13 @@ etiquetas de género.
 
 ## 🧩 Detecciones del clustering (Fase 3)
 
-- PCA con 2 componentes explica **48%** de la varianza; el **silhouette es máximo en K=2** (0.261).
-- **Dos "vibes" claras:** enérgicas/poco acústicas (67,438) vs. acústicas/poco enérgicas (22,302).
-- **Los clusters cruzan géneros** (género dominante 1–4% por cluster) → no son un re-etiquetado
-  del género, sino agrupaciones por características sonoras. Útil para recomendación por similitud.
+- El **silhouette es máximo en K=2** (0.261), pero K=2 solo separa "enérgicas vs acústicas".
+  Elegimos **K=4** (silhouette 0.171) por interpretabilidad: la métrica óptima no es el objetivo.
+- **Cuatro "vibes" nombradas:** acústicas/tranquilas (18,648), en vivo (7,001), alegres (36,646),
+  enérgicas/poco acústicas (27,445).
+- **UMAP** separa los grupos visualmente mejor que PCA (`reports/09_clusters_pca.png`).
+- **Los clusters cruzan géneros** (género dominante minoritario por cluster) → no son un
+  re-etiquetado del género, sino agrupaciones por sonoridad. Base del recomendador por similitud.
 
 ---
 
@@ -56,8 +59,8 @@ etiquetas de género.
 3. **El silhouette sobre una muestra** evita el costo O(n²) en datasets grandes (~90k).
 4. **Deduplicar por `track_id`** para análisis a nivel canción, pero conservar los duplicados de
    género para el análisis por género.
-5. **K bajo, clusters interpretables.** K=2 da la mejor separación; nombrarlos por su perfil
-   z-score los hace accionables (no "Cluster 0/1").
+5. **La métrica no es el objetivo.** El silhouette pedía K=2, pero K=4 da "vibes" mucho más
+   útiles; nombrarlas por su perfil z-score las hace accionables (no "Cluster 0/1/2/3").
 
 **De proceso**
 6. **Validar el roadmap contra los datos reales:** descubrir temprano que falta la columna de año

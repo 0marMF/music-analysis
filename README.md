@@ -23,8 +23,8 @@ entre géneros y **agrupar canciones por similitud sonora sin usar la etiqueta d
 | **El audio NO predice la popularidad** | Todas las correlaciones audio↔popularidad son |r| < 0.1 (máx: instrumentalness −0.095) |
 | **Popularidad sesgada** | Media 33/100; solo **4.3%** de las canciones superan 70 |
 | **Géneros con perfiles distintos** | classical (acústica/instrumental) vs metal/edm (enérgica) bien separados |
-| **2 grandes "vibes"** | El clustering óptimo (K=2) separa **enérgicas** (67,438) de **acústicas** (22,302) |
-| **Los clusters cruzan géneros** | El género dominante de cada cluster es solo 1–4% → no es re-etiquetado |
+| **4 "vibes" interpretables (K=4)** | acústicas/tranquilas, en vivo, alegres y enérgicas; el silhouette baja (0.26 → 0.17) a cambio de grupos más útiles |
+| **Los clusters cruzan géneros** | El género dominante de cada cluster es minoritario → capturan la sonoridad, no la etiqueta |
 
 ---
 
@@ -34,8 +34,8 @@ entre géneros y **agrupar canciones por similitud sonora sin usar la etiqueta d
    top canciones/artistas, perfil populares vs. poco populares.
 2. **Análisis por género** (`02_genre_analysis.ipynb`) — popularidad por género, radar de perfiles
    de audio, heatmap géneros × features.
-3. **Clustering** (`03_clustering.ipynb`) — escalado + PCA, codo + silhouette para elegir K,
-   K-Means, interpretación de clusters y cruce con géneros.
+3. **Clustering** (`03_clustering.ipynb`) — escalado, codo + silhouette, K-Means con **K=4**
+   nombrado, visualización **PCA + UMAP**, perfiles y cruce con géneros.
 
 > El dataset **no tiene año de lanzamiento**, por lo que el análisis de evolución temporal
 > previsto en el roadmap no es aplicable. La fase de predicción de popularidad (opcional) se
@@ -45,14 +45,19 @@ entre géneros y **agrupar canciones por similitud sonora sin usar la etiqueta d
 
 ## Clustering — "vibes" de audio
 
-K-Means con K=2 (máximo silhouette = 0.261) produce dos grupos nítidos e interpretables:
+El silhouette es máximo en K=2, pero K=2 solo separa "enérgicas vs acústicas" — demasiado grueso
+para el objetivo. Elegimos **K=4** (silhouette 0.17 vs 0.26): grupos más finos e interpretables.
+La métrica óptima no siempre da el resultado más útil.
 
-![Clusters PCA](reports/09_clusters_pca.png)
+![Clusters: PCA y UMAP](reports/09_clusters_pca.png)
 
-- **Enérgicas / poco acústicas** (67,438 temas) — incluye los grandes hits (Unholy, Quevedo BZRP).
-- **Acústicas / poco enérgicas** (22,302 temas) — Glimpse of Us, Another Love, Running Up That Hill.
+- **Acústicas / tranquilas** (18,648 temas)
+- **En vivo** (7,001)
+- **Alegres** (36,646)
+- **Enérgicas / poco acústicas** (27,445)
 
-Ambos grupos **mezclan muchos géneros**, capturando la "vibe" sonora más allá de la etiqueta.
+Los clusters **mezclan muchos géneros** (el dominante de cada uno es minoritario): capturan la
+sonoridad, no la etiqueta. **UMAP** separa los grupos visualmente mejor que PCA.
 
 ---
 

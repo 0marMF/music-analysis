@@ -255,10 +255,10 @@ recomendador por similitud de audio. Eso es lo que lo lleva de "EDA bonito" a pr
 - [ ] Validación de datos: columnas de audio presentes, rangos 0-1 donde toca, dedup correcto.
 - [ ] Test de que el clustering es reproducible con la semilla fija.
 
-**Mini-producto: recomendador de "canciones similares"**
-- [ ] Función/CLI `similar(track_id, n=10)` que devuelve canciones del mismo cluster o las más
-      cercanas por embedding (vecinos más próximos).
-- [ ] (Opcional) API pequeña con FastAPI envolviendo esa función.
+**Mini-producto: recomendador de "canciones similares"** — hecho (CP3)
+- [x] `src/recommend.py`: `Recommender.similar(track, n)` devuelve las canciones más cercanas por
+      audio (vecinos más próximos) + CLI (`python -m src.recommend "<canción>"`).
+- [x] API FastAPI (`src/api.py`): `GET /similar?track=...&n=...`.
 
 **Reproducibilidad y CI**
 - [ ] Persistir el modelo de clustering + scaler + PCA (`src/*.pkl`) para no recalcular.

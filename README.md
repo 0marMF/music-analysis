@@ -61,19 +61,29 @@ sonoridad, no la etiqueta. **UMAP** separa los grupos visualmente mejor que PCA.
 
 ---
 
+## Recomendador de canciones similares
+
+A partir del clustering, un mini-producto: dada una canción, devuelve las más parecidas por
+sonido (vecinos más cercanos en el espacio de audio), cruzando géneros.
+
+```bash
+python -m src.recommend "Bohemian Rhapsody"     # por terminal
+uvicorn src.api:app --reload                      # API: GET /similar?track=...&n=...
+```
+
+---
+
 ## Estructura
 
 ```
 music-analysis/
+├── config.yaml                   # features de audio, K, semilla, rutas
 ├── data/dataset.csv              # 114,000 pistas (no versionado)
-├── notebooks/
-│   ├── 01_EDA.ipynb
-│   ├── 02_genre_analysis.ipynb
-│   └── 03_clustering.ipynb
-├── reports/                      # 10 visualizaciones
-├── HALLAZGOS.md
-├── README.md
-└── ROADMAP.md
+├── src/                          # data, features, cluster, recommend, pipeline, api
+│   └── cluster_model.pkl         # scaler + KMeans + nombres de cluster
+├── notebooks/                    # 01_EDA, 02_genre_analysis, 03_clustering (importan src/)
+├── reports/                      # figuras + metrics.json + experiments.csv
+├── HALLAZGOS.md   README.md   ROADMAP.md
 ```
 
 ---
@@ -82,6 +92,11 @@ music-analysis/
 
 ```bash
 pip install -r requirements.txt
+
+# Clustering completo de una vez (datos -> features -> KMeans -> modelo + métricas)
+python -m src.pipeline
+
+# O los notebooks (narrativa) en orden
 jupyter nbconvert --to notebook --execute --inplace notebooks/01_EDA.ipynb
 jupyter nbconvert --to notebook --execute --inplace notebooks/02_genre_analysis.ipynb
 jupyter nbconvert --to notebook --execute --inplace notebooks/03_clustering.ipynb

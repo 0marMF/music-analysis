@@ -1,4 +1,4 @@
-# 🎵 Music Data Analysis (Spotify)
+# Music Data Analysis (Spotify)
 
 > **¿Qué hace popular a una canción? ¿Y podemos agrupar temas por "vibes"?**
 > *EDA, análisis por género y clustering (K-Means + PCA) sobre 114,000 pistas de Spotify*
@@ -9,14 +9,14 @@
 
 ---
 
-## 📌 Objetivo
+## Objetivo
 
 Explorar qué características de audio se asocian con la popularidad, comparar perfiles de audio
 entre géneros y **agrupar canciones por similitud sonora sin usar la etiqueta de género**.
 
 ---
 
-## 🎯 Hallazgos principales
+## Hallazgos principales
 
 | Hallazgo | Detalle |
 |---|---|
@@ -28,7 +28,7 @@ entre géneros y **agrupar canciones por similitud sonora sin usar la etiqueta d
 
 ---
 
-## 🔬 Metodología
+## Metodología
 
 1. **EDA** (`01_EDA.ipynb`) — distribución de popularidad, correlación audio↔popularidad,
    top canciones/artistas, perfil populares vs. poco populares.
@@ -37,26 +37,26 @@ entre géneros y **agrupar canciones por similitud sonora sin usar la etiqueta d
 3. **Clustering** (`03_clustering.ipynb`) — escalado + PCA, codo + silhouette para elegir K,
    K-Means, interpretación de clusters y cruce con géneros.
 
-> ⚠️ El dataset **no tiene año de lanzamiento**, por lo que el análisis de evolución temporal
+> El dataset **no tiene año de lanzamiento**, por lo que el análisis de evolución temporal
 > previsto en el roadmap no es aplicable. La fase de predicción de popularidad (opcional) se
 > omite porque el EDA ya demuestra que las features de audio no la explican.
 
 ---
 
-## 🧩 Clustering — "vibes" de audio
+## Clustering — "vibes" de audio
 
 K-Means con K=2 (máximo silhouette = 0.261) produce dos grupos nítidos e interpretables:
 
 ![Clusters PCA](reports/09_clusters_pca.png)
 
-- 🔵 **Enérgicas / poco acústicas** (67,438 temas) — incluye los grandes hits (Unholy, Quevedo BZRP).
-- 🟢 **Acústicas / poco enérgicas** (22,302 temas) — Glimpse of Us, Another Love, Running Up That Hill.
+- **Enérgicas / poco acústicas** (67,438 temas) — incluye los grandes hits (Unholy, Quevedo BZRP).
+- **Acústicas / poco enérgicas** (22,302 temas) — Glimpse of Us, Another Love, Running Up That Hill.
 
 Ambos grupos **mezclan muchos géneros**, capturando la "vibe" sonora más allá de la etiqueta.
 
 ---
 
-## 🏗️ Estructura
+## Estructura
 
 ```
 music-analysis/
@@ -73,7 +73,7 @@ music-analysis/
 
 ---
 
-## 🚀 Cómo ejecutar
+## Cómo ejecutar
 
 ```bash
 pip install -r requirements.txt
@@ -85,11 +85,11 @@ jupyter nbconvert --to notebook --execute --inplace notebooks/03_clustering.ipyn
 > Dataset: [Spotify Tracks Dataset — Kaggle](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset).
 > Colócalo en `data/dataset.csv` (no se versiona).
 
-> 📄 Detalle de detecciones y aprendizajes en [`HALLAZGOS.md`](HALLAZGOS.md).
+> Detalle de detecciones y aprendizajes en [`HALLAZGOS.md`](HALLAZGOS.md).
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 **Omar Mora Flores** · Data Analyst & ML Engineer
-📧 omar13mor@gmail.com · 🔗 [linkedin.com/in/omar-mora-flores](https://linkedin.com/in/omar-mora-flores)
+ omar13mor@gmail.com · [linkedin.com/in/omar-mora-flores](https://linkedin.com/in/omar-mora-flores)

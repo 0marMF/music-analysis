@@ -1,6 +1,6 @@
 # Roadmap — Music Data Analysis (Spotify)
 
-**Proyecto de portfolio:** Omar Mora Flores  
+**Proyecto de portfolio:** Omar Mora Flores
 **Objetivo:** Analizar patrones en datos musicales de Spotify para descubrir qué hace popular a una canción y agrupar canciones con características similares, demostrando habilidades en EDA, visualización y clustering.
 
 **Dataset:** [Spotify Tracks Dataset — Kaggle](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset)
@@ -11,30 +11,30 @@
 
 | Fase | Componente | Estado |
 |---|---|---|
-| 0 | Setup del entorno | ✅ Completado |
-| 1 | EDA — Qué hace popular a una canción | ✅ Completado |
-| 2 | Análisis por género | ✅ Completado |
-| 3 | Clustering — Agrupación de canciones | ✅ Completado |
-| 4 | (Opcional) Predicción de popularidad | ⏭️ Descartada — el EDA demuestra que el audio no predice popularidad |
-| 5 | Cierre de portfolio | ✅ Completado |
+| 0 | Setup del entorno | Completado |
+| 1 | EDA — Qué hace popular a una canción | Completado |
+| 2 | Análisis por género | Completado |
+| 3 | Clustering — Agrupación de canciones | Completado |
+| 4 | (Opcional) Predicción de popularidad | Descartada — el EDA demuestra que el audio no predice popularidad |
+| 5 | Cierre de portfolio | Completado |
 
-Leyenda: ⬜ Pendiente · 🔄 En progreso · ✅ Completado
+Leyenda: Pendiente · En progreso · Completado
 
 > **v1.0.0 completo.** Ver abajo **Mejoras planificadas (v1.1)** — el clustering quedó pobre
 > (K=2) y faltó *demostrar* el hallazgo de popularidad; ambos son focos declarados del proyecto.
 
 ---
 
-## 🔄 Mejoras planificadas (v1.1) — auditoría 2026-06-06
+## Mejoras planificadas (v1.1) — auditoría 2026-06-06
 
-### 🔴 P1 — Clustering interpretable (no solo el K óptimo por silhouette)
+### P1 — Clustering interpretable (no solo el K óptimo por silhouette)
 El silhouette favorece **K=2** ("enérgicas vs acústicas"), pero el objetivo eran clusters ricos
 e interpretables ("melancólicas acústicas", "instrumentales tranquilas"…).
 - [ ] Presentar también **K=4–5 con nombres descriptivos**, además del K=2
 - [ ] Documentar el trade-off **silhouette ↔ interpretabilidad** (la métrica no es el objetivo)
 - [ ] Visualización **t-SNE/UMAP** para separar mejor las "vibes" → `reports/`
 
-### 🟠 P2 — Fase 4: *demostrar* (no solo citar) que el audio no predice popularidad
+### P2 — Fase 4: *demostrar* (no solo citar) que el audio no predice popularidad
 - [ ] Modelo de regresión/clasificación de `popularity` con features de audio
 - [ ] Reportar el **R²/AUC bajo** como evidencia empírica del hallazgo estrella
 
@@ -43,7 +43,7 @@ se quedan cortos frente a clusters nombrados y una prueba empírica del resultad
 
 ---
 
-## 🔄 Backlog de mejoras — v1.1.0 *(planificado, aún sin implementar)*
+## Backlog de mejoras — v1.1.0 *(planificado, aún sin implementar)*
 
 > Derivado de la revisión de calidad (2026-06-06). El clustering quedó por debajo del foco del proyecto.
 
@@ -85,7 +85,7 @@ se quedan cortos frente a clusters nombrados y una prueba empírica del resultad
 
 ## Fase 1 — EDA — ¿Qué hace popular a una canción?
 
-**Archivo:** `notebooks/01_EDA.ipynb`  
+**Archivo:** `notebooks/01_EDA.ipynb`
 **Pregunta central:** ¿Qué características de audio se asocian con mayor popularidad?
 
 ### Secciones
@@ -132,7 +132,7 @@ se quedan cortos frente a clusters nombrados y una prueba empírica del resultad
 
 ## Fase 2 — Análisis por género
 
-**Archivo:** `notebooks/02_genre_analysis.ipynb`  
+**Archivo:** `notebooks/02_genre_analysis.ipynb`
 **Pregunta central:** ¿Tienen diferentes géneros patrones de audio distintos?
 
 ### Secciones
@@ -164,8 +164,8 @@ se quedan cortos frente a clusters nombrados y una prueba empírica del resultad
 
 ## Fase 3 — Clustering — Agrupación de canciones
 
-**Archivo:** `notebooks/03_clustering.ipynb`  
-**Pregunta central:** ¿Podemos agrupar canciones por "vibes" similares sin usar el género?  
+**Archivo:** `notebooks/03_clustering.ipynb`
+**Pregunta central:** ¿Podemos agrupar canciones por "vibes" similares sin usar el género?
 **Algoritmos:** K-Means + visualización con PCA/t-SNE
 
 ### Secciones
@@ -209,7 +209,7 @@ se quedan cortos frente a clusters nombrados y una prueba empírica del resultad
 
 ## Fase 4 — (Opcional) Predicción de popularidad
 
-**Archivo:** `notebooks/04_popularity_model.ipynb`  
+**Archivo:** `notebooks/04_popularity_model.ipynb`
 **Meta:** Modelo de regresión o clasificación para predecir popularidad.
 
 ### Opción A — Regresión
@@ -241,7 +241,7 @@ se quedan cortos frente a clusters nombrados y una prueba empírica del resultad
 
 ---
 
-## 🚀 De análisis a proyecto de Ciencia de Datos (Track DS — planificado)
+## De análisis a proyecto de Ciencia de Datos (Track DS — planificado)
 
 Este proyecto no tiene un "modelo" central, pero sí puede convertirse en un mini-producto: un
 recomendador por similitud de audio. Eso es lo que lo lleva de "EDA bonito" a proyecto de DS.

@@ -1,0 +1,17 @@
+{
+  "k": 2,
+  "silhouette": 0.2611,
+  "n_songs": 89740,
+  "clusters": [
+    {
+      "id": 0,
+      "name": "Altas en enérgicas, bajas en acústicas",
+      "size": 67438
+    },
+    {
+      "id": 1,
+      "name": "Altas en acústicas, bajas en enérgicas",
+      "size": 22302
+    }
+  ]
+}

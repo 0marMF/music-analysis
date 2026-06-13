@@ -1,0 +1,24 @@
+# Configuración central del análisis musical.
+# Cambiar aquí una ruta, la semilla o el número de clusters, no hurgando en el código.
+
+seed: 42
+
+data:
+  raw_csv: data/dataset.csv          # dataset de Spotify (no se versiona; ver README)
+  model: src/cluster_model.pkl       # scaler + KMeans + nombres de cluster serializados
+
+paths:
+  reports: reports
+  metrics: reports/metrics.json
+  experiments: reports/experiments.csv
+
+features:
+  # Features de audio para el clustering. loudness y tempo están en otras escalas:
+  # por eso escalamos todo antes de agrupar.
+  audio: [danceability, energy, valence, tempo, acousticness,
+          speechiness, instrumentalness, loudness, liveness]
+
+clustering:
+  k: 2                  # CP1 reproduce el K óptimo por silhouette; en CP2 pasa a 4 (nombrado)
+  k_range: [2, 3, 4, 5, 6, 7, 8]
+  silhouette_sample: 10000   # el silhouette es O(n^2): lo estimamos sobre una muestra

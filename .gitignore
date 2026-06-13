@@ -1,9 +1,13 @@
 # Datos (no subir — descargar desde Kaggle, ver ROADMAP/README)
 data/
 *.csv
+!reports/experiments.csv
 *.zip
-*.pkl
 *.parquet
+
+# Pickles regenerables, pero SÍ versionamos el modelo de clustering
+*.pkl
+!src/cluster_model.pkl
 
 # Python
 __pycache__/
@@ -13,8 +17,8 @@ __pycache__/
 venv/
 env/
 
-# Modelos serializados
-src/*.pkl
+# Temporales de build
+notebooks/_build_*.py
 
 # Sistema
 .DS_Store

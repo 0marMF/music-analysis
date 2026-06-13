@@ -20,7 +20,7 @@ entre géneros y **agrupar canciones por similitud sonora sin usar la etiqueta d
 
 | Hallazgo | Detalle |
 |---|---|
-| **El audio NO predice la popularidad** | Todas las correlaciones audio↔popularidad son |r| < 0.1 (máx: instrumentalness −0.095) |
+| **El audio apenas predice la popularidad** | Correlaciones |r| < 0.1; un modelo lo confirma: R² 0.03 (lineal) / 0.16 (Random Forest) |
 | **Popularidad sesgada** | Media 33/100; solo **4.3%** de las canciones superan 70 |
 | **Géneros con perfiles distintos** | classical (acústica/instrumental) vs metal/edm (enérgica) bien separados |
 | **4 "vibes" interpretables (K=4)** | acústicas/tranquilas, en vivo, alegres y enérgicas; el silhouette baja (0.26 → 0.17) a cambio de grupos más útiles |
@@ -36,10 +36,11 @@ entre géneros y **agrupar canciones por similitud sonora sin usar la etiqueta d
    de audio, heatmap géneros × features.
 3. **Clustering** (`03_clustering.ipynb`) — escalado, codo + silhouette, K-Means con **K=4**
    nombrado, visualización **PCA + UMAP**, perfiles y cruce con géneros.
+4. **Predicción de popularidad** (`04_popularity.ipynb`) — entrenamos modelos para *demostrar*
+   que el audio no la predice: R² **0.03** (lineal) / **0.16** (Random Forest), MAE ~15/100.
 
 > El dataset **no tiene año de lanzamiento**, por lo que el análisis de evolución temporal
-> previsto en el roadmap no es aplicable. La fase de predicción de popularidad (opcional) se
-> omite porque el EDA ya demuestra que las features de audio no la explican.
+> previsto en el roadmap no es aplicable.
 
 ---
 
@@ -79,9 +80,9 @@ uvicorn src.api:app --reload                      # API: GET /similar?track=...&
 music-analysis/
 ├── config.yaml                   # features de audio, K, semilla, rutas
 ├── data/dataset.csv              # 114,000 pistas (no versionado)
-├── src/                          # data, features, cluster, recommend, pipeline, api
+├── src/                          # data, features, cluster, recommend, popularity, pipeline, api
 │   └── cluster_model.pkl         # scaler + KMeans + nombres de cluster
-├── notebooks/                    # 01_EDA, 02_genre_analysis, 03_clustering (importan src/)
+├── notebooks/                    # 01_EDA, 02_genre, 03_clustering, 04_popularity (importan src/)
 ├── reports/                      # figuras + metrics.json + experiments.csv
 ├── HALLAZGOS.md   README.md   ROADMAP.md
 ```

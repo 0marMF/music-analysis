@@ -1,0 +1,15 @@
+{
+  "target": "popularity",
+  "models": {
+    "Linear Regression": {
+      "r2": 0.028,
+      "mae": 16.606
+    },
+    "Random Forest": {
+      "r2": 0.161,
+      "mae": 14.983
+    }
+  },
+  "best_model": "Random Forest",
+  "best_r2": 0.161
+}

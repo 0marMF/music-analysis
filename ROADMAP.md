@@ -48,7 +48,7 @@ se quedan cortos frente a clusters nombrados y una prueba empírica del resultad
 > Derivado de la revisión de calidad (2026-06-06). El clustering quedó por debajo del foco del proyecto.
 
 - [x] **Clustering interpretable (K=4)** además del K=2 óptimo por silhouette — 4 "vibes" nombradas (acústicas/tranquilas, en vivo, alegres, enérgicas); silhouette 0.17 vs 0.26, trade-off documentado.
-- [ ] **Reactivar la Fase 4 (predicción de popularidad)** — entrenar un modelo simple para *demostrar empíricamente* el R² bajo (CP4).
+- [x] **Fase 4 (predicción de popularidad)** — modelos entrenados (`src/popularity.py`, `04_popularity.ipynb`): R² 0.03 (lineal) / 0.16 (Random Forest), MAE ~15/100 → el audio apenas predice; hallazgo demostrado, no solo citado.
 - [x] **Visualización UMAP** para una separación visual más fina de los clusters (`reports/09_clusters_pca.png`).
 
 ---

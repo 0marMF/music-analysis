@@ -49,6 +49,17 @@ etiquetas de género.
 
 ---
 
+## 🎯 Detecciones de popularidad (Fase 4)
+
+- Entrenamos modelos a predecir `popularity` solo con audio: **R² 0.03 (lineal) / 0.16 (Random
+  Forest)**, MAE ~15 sobre 100. El audio **apenas** explica la popularidad.
+- El salto lineal→RF (0.03→0.16) dice que hay una señal **débil y no lineal**, pero MAE ~15/100 la
+  hace inútil para predecir. Confirmado lo que el EDA sugería, ahora con evidencia, no con cita.
+- Lección de negocio: la popularidad vive fuera del audio (artista, marketing, momento). Por eso
+  el proyecto se queda en describir y agrupar, no en prometer un predictor que no existe.
+
+---
+
 ## 🎓 Aprendizajes
 
 **Técnicos**
